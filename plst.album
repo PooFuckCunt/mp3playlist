@@ -1,6 +1,14 @@
 #!/bin/bash
 COLLECTION="$HOME/Music/Main"
 PHRASE="$1$2$3$4$5$6$7"
+if [ -z "$1" ]
+then
+echo "Usage: say name of album in your collection e.g plst.album Angel Dust if you have that album title in your collection it will play in the original order"; exit
+else
+ true
+      
+    fi
+
 
 find $COLLECTION -name "*.MP3" -o -name "*.mp3" -o -name "*.wav" -o -name "*.WAV"-o -name "*.ogg" -o -name "*.OGG" -o -name "*.m4a" -o -name "*.M4A"  -o -name "*.wma" -o -name "*.WMA"  -o -name "*.flac" -o -name "*.FLAC"  |grep -i "$1" |grep -i "$2"|grep -i "$3" |grep -i "$4" |grep -i "$5" |grep -i "$6" |grep -i "$7"|sort -n  > /tmp/playlist.$PHRASE.m3u
 LIST="`cat /tmp/playlist.$PHRASE.m3u |wc -l`"
