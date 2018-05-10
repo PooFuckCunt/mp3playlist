@@ -1,0 +1,15 @@
+#!/bin/bash
+COLLECTION="$HOME/Music/Main"
+PHRASE="$1$2$3$4$5$6$7"
+
+find $COLLECTION -name "*.MP3" -o -name "*.mp3" -o -name "*.wav" -o -name "*.WAV"-o -name "*.ogg" -o -name "*.OGG" -o -name "*.m4a" -o -name "*.M4A"  -o -name "*.wma" -o -name "*.WMA"  -o -name "*.flac" -o -name "*.FLAC"  |grep -i "$1" |grep -i "$2"|grep -i "$3" |grep -i "$4" |grep -i "$5" |grep -i "$6" |grep -i "$7" > /tmp/playlist.$PHRASE.m3u
+LIST="`cat /tmp/playlist.$PHRASE.m3u |wc -l`"
+echo -e  "\e[36mRandomly playing $LIST search results"
+mpv -volume 40 --audio-display=no -shuffle  -playlist /tmp/playlist.$PHRASE.m3u
+
+
+#then randomly play all of collection that doesnt match comment out if you dont want this feature.
+find $COLLECTION -name "*.mp3" -o -name "*.ogg" -o -name "*.wma" -o -name "*.m4a" -o -name "*.flac" > /tmp/playlist.m3u
+echo -e  "\e[36mRandomly playing Music Collection"
+
+mpv -volume 40 --audio-display=no -shuffle  -playlist /tmp/playlist.m3u

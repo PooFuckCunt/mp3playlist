@@ -1,0 +1,12 @@
+#!/bin/bash
+PWD=""$1""
+
+if [ -z "$PWD" ]
+then
+PWD="`pwd`" && echo "$PWD is now playing"
+else
+      echo "$PWD is now playing"
+fi
+
+find "$PWD" -name "*.mp3" -o -name "*.ogg" -o -name "*.wma" -o -name "*.flac" -o -name "*.m4a"> /tmp/playlist.m3u
+mpv --audio-display=no -shuffle -playlist /tmp/playlist.m3u
