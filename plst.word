@@ -2,6 +2,17 @@
 COLLECTION="$HOME/Music/Main"
 PHRASE="$1$2$3$4$5$6$7"
 
+if [ -z "$1" ]
+then
+echo "Usage: Make a keyword search e.g "plst.word smells like teen spirit" will search for that phrase and play any results before randomly playing the rest of your collection ";
+ exit
+else
+ true
+      
+    fi
+
+
+
 find $COLLECTION -name "*.MP3" -o -name "*.mp3" -o -name "*.wav" -o -name "*.WAV"-o -name "*.ogg" -o -name "*.OGG" -o -name "*.m4a" -o -name "*.M4A"  -o -name "*.wma" -o -name "*.WMA"  -o -name "*.flac" -o -name "*.FLAC"  |grep -i "$1" |grep -i "$2"|grep -i "$3" |grep -i "$4" |grep -i "$5" |grep -i "$6" |grep -i "$7" > /tmp/playlist.$PHRASE.m3u
 LIST="`cat /tmp/playlist.$PHRASE.m3u |wc -l`"
 echo -e  "\e[36mRandomly playing $LIST search results"

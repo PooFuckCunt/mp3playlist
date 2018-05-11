@@ -1,6 +1,14 @@
 #!/bin/bash
 PWD=""$1""
 
+if [ -z "$1" ]
+then
+echo ""Usage: e.g "plst.path ~/Documents/Music/Classic\ Rock" will play a specific path randomly anywhere on your filesystem provided it contains audio files if no path is given it will search and play anything found in the current directory path randomly ""; sleep 3
+else
+ true
+      
+    fi
+
 if [ -z "$PWD" ]
 then
 PWD="`pwd`" && echo "$PWD is now playing"
@@ -8,5 +16,5 @@ else
       echo "$PWD is now playing"
 fi
 
-find "$PWD" -name "*.mp3" -o -name "*.ogg" -o -name "*.wma" -o -name "*.flac" -o -name "*.m4a"> /tmp/playlist.m3u
+find "$PWD" -name "*.MP3" -o -name "*.mp3" -o -name "*.wav" -o -name "*.WAV"-o -name "*.ogg" -o -name "*.OGG" -o -name "*.m4a" -o -name "*.M4A"  -o -name "*.wma" -o -name "*.WMA"  -o -name "*.flac" -o -name "*.FLAC" > /tmp/playlist.m3u
 mpv --audio-display=no -shuffle -playlist /tmp/playlist.m3u

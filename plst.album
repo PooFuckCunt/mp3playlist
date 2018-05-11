@@ -3,7 +3,7 @@ COLLECTION="$HOME/Music/Main"
 PHRASE="$1$2$3$4$5$6$7"
 if [ -z "$1" ]
 then
-echo "Usage: say name of album in your collection e.g plst.album Angel Dust if you have that album title in your collection it will play in the original order"; exit
+echo "Usage: say name of album in your collection e.g plst.album Angel Dust if you have that album title in your collection it will play in the original order also you must edit the value in COLLECTION= to point to your mp3 collection"; exit
 else
  true
       
