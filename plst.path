@@ -3,7 +3,7 @@ PWD=""$1""
 
 if [ -z "$1" ]
 then
-echo ""Usage: e.g "plst.path ~/Documents/Music/Classic\ Rock" will play a specific path randomly anywhere on your filesystem provided it contains audio files if no path is given it will search and play anything found in the current directory path randomly ""; sleep 3
+echo  "Usage: e.g "plst.path ~/Documents/Music/Classic\ Rock" will play a specific path randomly anywhere on your filesystem provided it contains audio files if no path is given it will search and play anything found in the current directory path randomly "; sleep 3
 else
  true
       
