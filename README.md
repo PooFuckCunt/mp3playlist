@@ -14,4 +14,4 @@ plst.word Searchs default folder for keywords and randomly plays all results the
 Usage: Make a keyword search e.g "plst.word smells like teen spirit" will search for that phrase and play any results before randomly playing the rest of your collection
 
 
-INSTALLATION sudo sh install.sh
+INSTALLATION sudo bash install.sh
